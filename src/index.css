@@ -1,0 +1,80 @@
+.App{
+    margin: 20px;
+    font-family: Consolas;
+}
+.taskList{
+    margin: 20px;
+    font-family: Consolas;
+    display: flex;
+    justify-content: center;  
+    flex-direction: column;
+}
+.task-completed{
+    background-color: rgba(0, 128, 0, 0.546);
+    border-radius: 20px;
+    padding: 10px;
+}
+.task-uncompleted{
+    background-color: rgba(255, 0, 0, 0.533);
+    border-radius: 20px;
+    padding: 10px;
+}
+.list-no-dots{
+    list-style-type:none;
+}
+.item{
+    margin:10px;
+    width: 500px;
+    text-align: center;
+    border: 2px solid rgb(116, 30, 2);
+    
+}
+.item:hover{
+    background-color: rgba(33, 33, 144, 0.891);
+    box-shadow: 10px -16px teal;
+}
+h2{
+    text-decoration: underline;
+}
+.card-task{
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: greenyellow;
+    display: flex;
+    justify-self: center;
+    align-items: left;
+    flex-direction: column;
+    width: 50%;
+}
+h1.done{
+    background-color: blue;
+    padding: 0.5rem;
+}
+h1.nodone{
+    background-color: yellow;
+    padding: 0.5rem;
+}
+.completed{
+    background-color: green;
+}
+.undone{
+    background-color: red;
+}
+.conectado{
+    background-color: green;
+    width: fit-content;
+    color: white;
+    padding: 1px 2rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.desconectado{
+    background-color: red;
+    opacity: 0.5;
+    width: fit-content;
+    color: white;
+    padding: 1px 2rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
