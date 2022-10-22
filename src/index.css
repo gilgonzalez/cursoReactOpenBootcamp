@@ -2,6 +2,22 @@
     margin: 20px;
     font-family: Consolas;
 }
+.ejemplo2{
+    background-color: rgba(241, 113, 66, 0.5);
+    padding: 1rem;
+}
+.ejemplo1{
+    background-color: rgba(128, 255, 0, 0.516);
+    padding: 1rem;
+}
+.ejemplo3{
+    background-color: rgba(238, 130, 238, 0.47);
+    padding: 1rem;
+}
+.ejemplo4{
+    background-color: rgba(0, 255, 255, 0.653);
+    padding: 1rem;
+}
 .taskList{
     margin: 20px;
     font-family: Consolas;
