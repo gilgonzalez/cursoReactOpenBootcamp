@@ -1,3 +1,4 @@
+import EjemploEstilos from './components/pure/EjemploEstilos';
 import ContactoComponent from './container/contactoComponent'
 import TaskList from './container/task_list'
 import Ejemplo4 from './hooks/Ejemplo4';
@@ -32,6 +33,7 @@ function App() {
         </div>
       </Ejemplo4>
       {/* <ContactoComponent /> */}
+      <EjemploEstilos name='Gil'/>
       <TaskList />
     </div>
   );

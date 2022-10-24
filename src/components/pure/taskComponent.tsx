@@ -1,15 +1,25 @@
-
+import { useEffect } from "react";
 import { Task } from "../../models/task.class";
+import '../../styles/task.scss'
 
 interface Props {
   task: Task;
 }
 
 const TaskComponent = ({ task }: Props) => {
+
+  useEffect(() => {
+    console.log('Task created')
+  
+    return () => {
+      console.log(`Task ${task.name} is about to be dismounting`)
+    }
+  }, [task])
+  
   return (
     <div className={`card-task ${task.completed? 'completed':'undone'}`}>
-      <h2> {task.name}</h2>
-      <hr />
+      <h2 className='task-name'> {task.name}</h2>
+
       <h3>{task.description}</h3>
       <h4>{task.level}</h4>
       <h5>

@@ -18,12 +18,15 @@ const anotherTask =  new Task (
 
 const TaskList = () => {
   //Estado inicial del componente
-  const [tasks, setTasks] = useState([defaultTask, anotherTask])
+  const [tasks, setTasks] = useState([defaultTask, anotherTask]);
+  const [loading, setLoading] = useState(true);
 
   //Control del ciclo de vida del componente
   useEffect(() => {
 
     console.log('Task state has been modified')
+    console.log('Cargando los datos')
+    setLoading(false)
   
     return () => {
       console.log('TaskList component is about to be dismounting')
