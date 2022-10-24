@@ -1,6 +1,7 @@
 import ContactoComponent from './container/contactoComponent'
 import TaskList from './container/task_list'
 import Ejemplo4 from './hooks/Ejemplo4';
+import ExampleCycleLife from './hooks/lifecycle/ExampleCycleLife';
 import UseState from './hooks/UseState';
 import UseStateCombinado from './hooks/UseStateCombinado';
 import UseStateUseContext from './hooks/UseStateUseContext';
@@ -15,6 +16,8 @@ function App() {
 
   return (
     <div className="App">
+      {/* <ExampleCycleLife/>
+      <hr />
       <UseState/>
       <hr />
       <UseStateCombinado/>
@@ -29,7 +32,6 @@ function App() {
         </div>
       </Ejemplo4>
       {/* <ContactoComponent /> */}
-      <hr />
       <TaskList />
     </div>
   );

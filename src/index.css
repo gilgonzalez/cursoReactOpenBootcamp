@@ -18,6 +18,10 @@
     background-color: rgba(0, 255, 255, 0.653);
     padding: 1rem;
 }
+.ejemplo-life-cycle{
+    background-color: green;
+    padding: 1rem;
+}
 .taskList{
     margin: 20px;
     font-family: Consolas;

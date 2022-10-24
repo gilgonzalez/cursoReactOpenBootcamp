@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Task } from "../../models/task.class";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 const TaskComponent = ({ task }: Props) => {
   return (
     <div className={`card-task ${task.completed? 'completed':'undone'}`}>
-      <h2>{task.name}</h2>
+      <h2> {task.name}</h2>
       <hr />
       <h3>{task.description}</h3>
       <h4>{task.level}</h4>
