@@ -1,5 +1,6 @@
 import EjemploEstilos from './components/pure/EjemploEstilos';
 import ContactoComponent from './container/contactoComponent'
+import FatherExample from './container/FatherExample';
 import TaskList from './container/task_list'
 import Ejemplo4 from './hooks/Ejemplo4';
 import ExampleCycleLife from './hooks/lifecycle/ExampleCycleLife';
@@ -35,6 +36,7 @@ function App() {
       {/* <ContactoComponent /> */}
       <EjemploEstilos name='Gil'/>
       <TaskList />
+      {/* <FatherExample/> */}
     </div>
   );
 }

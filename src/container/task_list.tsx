@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import TaskForm from "../components/forms/TaskForm";
 import TaskComponent from "../components/pure/taskComponent";
 import { NIVELES, Task } from "../models/task.class";
 
@@ -24,12 +25,12 @@ const thirdTask = new Task(
 
 const bodyCard = {
   position: "relative" as "relative",
-  height: "500px",
+  height: "fit-content",
 };
 
 const TaskList = () => {
   //Estado inicial del componente
-  const [tasks, setTasks] = useState([defaultTask, anotherTask,thirdTask]);
+  const [tasks, setTasks] = useState([defaultTask, anotherTask, thirdTask]);
   const [loading, setLoading] = useState(true);
 
   //Control del ciclo de vida del componente
@@ -60,10 +61,10 @@ const TaskList = () => {
           <table className="table table-hover table-bordered border-dark">
             <thead className="table-dark">
               <tr>
-                <th scope="col" >Title</th>
-                <th scope="col" >Description</th>
-                <th scope="col" >Priority</th>
-                <th scope="col" >Actions</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -75,6 +76,7 @@ const TaskList = () => {
           </table>
         </div>
       </div>
+      <TaskForm />
     </div>
   );
 };
