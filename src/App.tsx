@@ -33,8 +33,9 @@ function App() {
           <h4>Esto es otro children h4 dentro de un DIV</h4>
         </div>
       </Ejemplo4>
-      {/* <ContactoComponent /> */}
+       
       {/* <EjemploEstilos name='Gil'/> */}
+      <ContactoComponent /> 
       <TaskList />
       {/* <FatherExample/> */}
     </div>

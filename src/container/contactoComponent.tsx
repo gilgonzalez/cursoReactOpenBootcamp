@@ -1,30 +1,43 @@
 import { useState } from "react";
+import ContactForm from "../components/forms/ContactForm";
 import InformacionContacto from "../components/pure/InformacionContacto";
 import { Contacto } from "../models/contacto.class";
 
+const defaultContacto: Contacto = {
+  nombre: "Francisco Javier",
+  apellido: "Gil González",
+  email: "fragilgon@gmail.com",
+  conectado: false,
+};
+const anotherContacto: Contacto = {
+  nombre: "Francisco Javier",
+  apellido: "García Torrejón",
+  email: "fragartor@gmail.com",
+  conectado: false,
+};
 const ContactoComponent = () => {
-  const defaultContacto: Contacto = {
-    nombre: "Francisco Javier",
-    apellido: "Gil González",
-    email: "fragilgon@gmail.com",
-    conectado: false,
-  };
+  const [listadoContactos, setListadoContacto] = useState([defaultContacto, anotherContacto]);
 
-  const handleConnect = () => {
-    setContacto({ ...contacto, conectado: !contacto.conectado });
-    console.log(contacto.conectado);
-  };
-
-  const [contacto, setContacto] = useState(defaultContacto);
-
+  function handleConnection(contacto:Contacto){
+    const index = listadoContactos.indexOf(contacto)
+    const tempContactos = [...listadoContactos]
+    tempContactos[index].conectado = !tempContactos[index].conectado
+    setListadoContacto(tempContactos)
+  }
+  function addNewContact(contacto:Contacto){
+    setListadoContacto([...listadoContactos, contacto])
+  }
   return (
-    <div>
-      <h1>Información del contacto</h1>
-      <InformacionContacto contacto={contacto} />
-      <button onClick={handleConnect}>
-        {contacto.conectado ? <span>Desconectar</span> : <span>Conectar</span>}
-      </button>
-    </div>
+    <>
+      <div>
+        {listadoContactos.map((contacto:Contacto, index)=>(
+          <InformacionContacto key={index} contacto={contacto} setConnection={handleConnection}/>
+        ))}
+      </div>
+      <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <ContactForm add={addNewContact }/>
+      </div>
+    </>
   );
 };
 

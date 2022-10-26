@@ -27,7 +27,7 @@ const TaskForm = ({ add }: Props) => {
   return (
     <form
       onSubmit={addTask}
-      className="w-75 d-flex justify-content-center align-items-center mb-4"
+      className="task w-75 d-flex justify-content-center align-items-center mb-4"
     >
       <div className="form-outline flex-fill mt-4 d-flex justify-content-center align-items-center flex-column">
       <h3 className='mb-4'>Formulario para añadir nuevas tareas</h3>

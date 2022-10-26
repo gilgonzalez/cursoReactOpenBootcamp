@@ -1,6 +1,12 @@
-form{
-    background-color: rgba(31, 159, 31, 0.75);
-    border: 2px double rgb(13,110,253);
+form.task{
+    background-color: #77dd77;
+    border: 2px double #84b6f4;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+form.contact{
+    background-color: #84b6f4;
+    border: 2px double #77dd77;
     margin-top: 10px;
     border-radius: 10px;
 }
