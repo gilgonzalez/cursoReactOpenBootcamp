@@ -44,21 +44,33 @@ const TaskList = () => {
     };
   }, [tasks]);
 
+  function completeTask(task: Task) {
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks];
+    tempTasks[index].completed = !tempTasks[index].completed;
+    setTasks(tempTasks);
+  }
+  function deleteTask(task: Task) {
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks];
+    tempTasks.splice(index, 1);
+    setTasks(tempTasks);
+  }
+  function addTask(task:Task){
+    const tempTask = [...tasks]
+    tempTask.push(task)
+    setTasks(tempTask)
+  }
+
   return (
-    <div className="taskList col-12">
-      <h1>Task App</h1>
-      <div className="card me-4">
+    <div className="taskList col-11">
+      <h1>Listado de Tareas</h1>
+      
         {/**CARD HEADER */}
-        <div className="card-header p-3 d-flex justify-content-center">
-          <h5>Your TaskList</h5>
-        </div>
+        
         {/**CARD BODY */}
-        <div
-          className="card-body"
-          data-mdb-perfect-scrollbar="true"
-          style={bodyCard}
-        >
-          <table className="table table-hover table-bordered border-dark">
+        
+          <table className="table table-hover table-bordered border-dark ">
             <thead className="table-dark">
               <tr>
                 <th scope="col">Title</th>
@@ -70,13 +82,20 @@ const TaskList = () => {
             <tbody>
               {/**TODO: ITERAR SOBRE UNA LISTA DE TAREAS */}
               {tasks.map((task: Task, index) => (
-                <TaskComponent task={task} key={index} />
+                <TaskComponent
+                  task={task}
+                  key={index}
+                  complete={completeTask}
+                  deleteTask={deleteTask}
+                />
               ))}
             </tbody>
           </table>
-        </div>
+        
+      
+      <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <TaskForm add={addTask}/>
       </div>
-      <TaskForm />
     </div>
   );
 };

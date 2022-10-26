@@ -1,0 +1,6 @@
+form{
+    background-color: rgba(31, 159, 31, 0.75);
+    border: 2px double rgb(13,110,253);
+    margin-top: 10px;
+    border-radius: 10px;
+}

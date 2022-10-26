@@ -34,7 +34,7 @@ function App() {
         </div>
       </Ejemplo4>
       {/* <ContactoComponent /> */}
-      <EjemploEstilos name='Gil'/>
+      {/* <EjemploEstilos name='Gil'/> */}
       <TaskList />
       {/* <FatherExample/> */}
     </div>
