@@ -10,3 +10,27 @@ form.contact{
     margin-top: 10px;
     border-radius: 10px;
 }
+.error {
+    
+    background-color: rgba(255, 99, 71, 0.612);
+    font-weight: 800;
+    border-radius: 5px;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.error p {
+    margin:0
+}
+.formik-task{
+    background-color: #77dd77;
+    border: 2px double #84b6f4;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: green;
+}

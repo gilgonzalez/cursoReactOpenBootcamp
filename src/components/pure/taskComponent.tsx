@@ -5,7 +5,7 @@ import "../../styles/task.scss";
 interface Props {
   task: Task;
   complete: (task:Task)=>void,
-  deleteTask:(task:Task)=> void
+  deleteTask:(task:Task)=> void,
 }
 
 const TaskComponent = ({ task, complete, deleteTask }: Props) => {
@@ -49,16 +49,16 @@ const TaskComponent = ({ task, complete, deleteTask }: Props) => {
     } 
     else 
     {
-     return (<i onClick={()=>complete(task)} className="bi bi-toggle-off  ms-2 task-action" style={{color:'grey', fontWeight:'bold'}}></i>)
+     return (<i onClick={()=>complete(task)} className="bi bi-toggle-off text-white  ms-2 task-action" style={{color:'grey', fontWeight:'bold'}}></i>)
     }
   }
 
   return (
-    <tr className="fw-normal" >
-      <th >
+    <tr className={`  ${task.completed ? 'task-completed text-secondary':'task-pending text-white'}`} >
+      <th className="text-capitalize">
         <span className='ms-1'>{task.name}</span>
       </th>
-      <td className='align-middle'>
+      <td className='align-middle text-lowercase'>
         <span >{task.description}</span>
       </td>
       <td>
@@ -68,7 +68,7 @@ const TaskComponent = ({ task, complete, deleteTask }: Props) => {
       <td className='align-middle'>
         {/**TODO: sustituir por iconos */}
         {taskIconCompleted()}
-        <i className="bi-trash ms-2 task-action" onClick={()=>deleteTask(task)} style={{color:'tomato', fontSize:'large'}}></i>
+        <i className="bi-trash ms-2 task-action" onClick={()=>deleteTask(task)} style={{color:'red', fontSize:'large'}}></i>
       </td>
     </tr>
   );

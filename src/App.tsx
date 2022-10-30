@@ -1,21 +1,9 @@
-import EjemploEstilos from './components/pure/EjemploEstilos';
-import ContactoComponent from './container/contactoComponent'
-import FatherExample from './container/FatherExample';
-import TaskList from './container/task_list'
-import Ejemplo4 from './hooks/Ejemplo4';
-import ExampleCycleLife from './hooks/lifecycle/ExampleCycleLife';
-import UseState from './hooks/UseState';
-import UseStateCombinado from './hooks/UseStateCombinado';
-import UseStateUseContext from './hooks/UseStateUseContext';
-import './index.css'
-import { Contacto } from './models/contacto.class'
-
-
-
+import TaskList from "./components/container/task_list";
+import "./index.css";
+import OptionalRender from "./components/pure/OptionalRender";
+import RegisterFormik from "./components/forms/RegisterFormik";
 
 function App() {
-
-
   return (
     <div className="App">
       {/* <ExampleCycleLife/>
@@ -35,11 +23,19 @@ function App() {
       </Ejemplo4>
        
       {/* <EjemploEstilos name='Gil'/> */}
-      <ContactoComponent /> 
+      {/* <ContactoComponent />  */}
       <TaskList />
       {/* <FatherExample/> */}
+      <hr />
+      <OptionalRender />
+      <hr />
+
+      <hr />
+      {/* <LoginFormik/> */}
+      <RegisterFormik/>
+      {/* <ContenedorLupa/>  */}
     </div>
   );
 }
 
-export default App
+export default App;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ChildExample from "../components/pure/ChildExample";
+import ChildExample from "../pure/ChildExample";
 
 const FatherExample = () => {
 

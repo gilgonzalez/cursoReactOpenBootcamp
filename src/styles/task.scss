@@ -2,7 +2,24 @@
     font-weight: bold;
     color: whitesmoke;
 }
-
 .task-action{
     cursor: pointer;
+}
+.task-completed{
+    background-color: rgba(172, 255, 47, 0.45);
+    text-decoration: line-through;
+}
+.task-pending{
+    background-color: rgba(255, 99, 71, 0.45);
+    font-weight: bolder;
+}
+
+.select-normal{
+    background-color: cornflowerblue;
+}
+.select-urgent{
+    background-color: tomato;
+}
+.select-blocking{
+    background-color: goldenrod;
 }

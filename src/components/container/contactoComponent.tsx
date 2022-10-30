@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ContactForm from "../components/forms/ContactForm";
-import InformacionContacto from "../components/pure/InformacionContacto";
-import { Contacto } from "../models/contacto.class";
+import ContactForm from "../forms/ContactForm";
+import InformacionContacto from "../pure/InformacionContacto";
+import { Contacto } from "../../models/contacto.class";
 
 const defaultContacto: Contacto = {
   nombre: "Francisco Javier",
@@ -29,14 +29,22 @@ const ContactoComponent = () => {
   }
   return (
     <>
-      <div>
-        {listadoContactos.map((contacto:Contacto, index)=>(
-          <InformacionContacto key={index} contacto={contacto} setConnection={handleConnection}/>
-        ))}
+    <div className='row'>
+      <div className="col-6">
+        
+          {listadoContactos.map((contacto:Contacto, index)=>(
+            <InformacionContacto key={index} contacto={contacto} setConnection={handleConnection}/>
+          ))}
+        
+
       </div>
-      <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-        <ContactForm add={addNewContact }/>
+      <div className="col-6">
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+          <ContactForm add={addNewContact }/>
+        </div>
+
       </div>
+    </div>
     </>
   );
 };

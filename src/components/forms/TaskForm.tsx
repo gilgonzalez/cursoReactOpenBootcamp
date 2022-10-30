@@ -4,9 +4,10 @@ import './form.css'
 
 interface Props {
   add: (task: Task) => void;
+  length: number
 }
 
-const TaskForm = ({ add }: Props) => {
+const TaskForm = ({ add, length }: Props) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLInputElement>(null);
   const levelRef = useRef<HTMLSelectElement>(null);
@@ -27,7 +28,7 @@ const TaskForm = ({ add }: Props) => {
   return (
     <form
       onSubmit={addTask}
-      className="task w-75 d-flex justify-content-center align-items-center mb-4"
+      className="ps-3 w-100 task d-flex justify-content-center align-items-center "
     >
       <div className="form-outline flex-fill mt-4 d-flex justify-content-center align-items-center flex-column">
       <h3 className='mb-4'>Formulario para añadir nuevas tareas</h3>
@@ -39,7 +40,6 @@ const TaskForm = ({ add }: Props) => {
             ref={nameRef}
             placeholder="name@example.com"
             required
-            autoFocus
           />
           <label htmlFor="inputName">Nombre de la tarea</label>
         </div>
@@ -57,22 +57,22 @@ const TaskForm = ({ add }: Props) => {
         <div className='form-floating w-75'>
           <select
             aria-label="Floating label select example"
-            className="form-select"
+            className={`form-control`}
             name=""
             id="selectLevel"
             ref={levelRef}
             defaultValue={NIVELES.NORMAL}
           >
-            <option selected value={NIVELES.NORMAL}>NORMAL</option>
-            <option value={NIVELES.BLOQUEANTE}>BLOQUING</option>
-            <option value={NIVELES.URGENTE}>URGENT</option>
+            <option className='select-normal' value={NIVELES.NORMAL}>NORMAL</option>
+            <option className='select-blocking' value={NIVELES.BLOQUEANTE}>BLOQUING</option>
+            <option className='select-urgent' value={NIVELES.URGENTE}>URGENT</option>
           </select>
 
           <label htmlFor="selectLevel" className="sr-only">
             Priority
           </label>
         </div>
-        <button type="submit" className="btn btn-primary btn-lg btn-block mt-2 mb-2">Add New Task</button>
+        <button type="submit" className="btn btn-primary btn-lg btn-block mt-2 mb-2">{length===0 ?'Create your first Task':'Add new Task'}</button>
       </div>
     </form>
   );

@@ -23,7 +23,6 @@
     padding: 1rem;
 }
 .taskList{
-    margin: 20px;
     font-family: Consolas;
     display: flex;
     justify-content: center;  
